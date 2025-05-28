@@ -1,0 +1,19 @@
+@font-face {
+	font-family: 'Inter';
+	src: url('/fonts/Inter.woff2?v=1') format('woff2-variations');
+	src: url('/fonts/Inter.woff2?v=1') format('woff2') tech('variations');
+	font-style: normal;
+	font-display: swap;
+	font-weight: 300 600;
+}
+
+/* == FALLBACK FONT CONFIG == */
+
+@font-face {
+	font-family: inter-fallback;
+	ascent-override: 90.2%;
+	descent-override: 22.48%;
+	line-gap-override: 0%;
+	size-adjust: 107.4%;
+	src: local('Arial');
+}
