@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, envField } from "astro/config";
 
 import cloudflare from "@astrojs/cloudflare";
 
@@ -11,4 +11,13 @@ export default defineConfig({
       enabled: true,
     },
   }),
+  env: {
+    schema: {
+      FONTS_CDN_URL: envField.string({
+        context: "server",
+        access: "public",
+        default: "https://font-repo.pages.dev",
+      }),
+    },
+  },
 });

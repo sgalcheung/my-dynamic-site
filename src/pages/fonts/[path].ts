@@ -1,10 +1,10 @@
 import type { APIRoute } from "astro";
+import { FONTS_CDN_URL } from "astro:env/server"
 
 export const GET: APIRoute = async ({ params, request }) => {
   const path = params.path;
-  const cdnUrl = import.meta.env.FONTS_CDN_URL ?? "https://font-repo.pages.dev";
-  const backendUrl = cdnUrl.replace(/\/+$/, '') + '/' + path;
-  console.log("Fetching font from:", cdnUrl);
+  const backendUrl = FONTS_CDN_URL.replace(/\/+$/, '') + '/' + path;
+  console.log("Fetching font from:", FONTS_CDN_URL);
 
   try {
     const response = await fetch(backendUrl, {
