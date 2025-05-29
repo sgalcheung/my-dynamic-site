@@ -4,6 +4,7 @@ export const GET: APIRoute = async ({ params, request }) => {
   const path = params.path;
   const cdnUrl = import.meta.env.FONTS_CDN_URL ?? "https://font-repo.pages.dev";
   const backendUrl = cdnUrl.replace(/\/+$/, '') + '/' + path;
+  console.log("Fetching font from:", cdnUrl);
 
   try {
     const response = await fetch(backendUrl, {
